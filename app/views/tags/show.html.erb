@@ -1,0 +1,12 @@
+<h1><%= @tag.name %></h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-condensed">
+    <th>Players</th>
+    <% @twins.each do |t| %>
+    <tr>
+      <td><%= link_to t.name, t %></li>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+<h1><%= @twin.name %></h1>
+
+<p>
+  <strong>Position:</strong>
+  <%= @twin.position %>
+</p>
+<p>
+  <strong>Number:</strong>
+  <%= @twin.number %>
+</p>
+<p>
+  <strong>Bio:</strong>
+  <%= @twin.bio %>
+</p>
+<p><strong>Tags:</strong></p>
+<% @tags.each do |t| %>
+<ul>
+ <li><%= link_to t.name, t %></li>
+</ul>
+<% end %>
+
+<%= link_to 'Edit Player', edit_twin_path(@twin) %> |
+<%= link_to 'Full Roster', twins_path %>

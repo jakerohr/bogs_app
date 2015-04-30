@@ -1,0 +1,14 @@
+<%= bootstrap_form_for @twin do |f| %>
+
+    <%= f.text_field :name, :placeholder => "Enter a Player" %>
+    <%= f.text_field :position, :placeholder => "Enter a Position" %>
+    <%= f.text_field :number, :placeholder => "Player's #" %>
+    <%= f.text_area :bio, :placeholder => "Player Bio" %>
+    <%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+    <%= f.submit %>
+
+
+
+
+<% end %>
+

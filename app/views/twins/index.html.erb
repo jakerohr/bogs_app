@@ -1,0 +1,16 @@
+<h1>1991 Minnesota Twins</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-condensed">
+    <% @twin.each do |p| %>
+      <tr>
+        <td>#<%= p.number %></td>
+        <td><%= link_to p.name, p %></td>
+        <td><%= p.position %></td>
+        <td><%= link_to 'Edit Player', edit_twin_path(p) %></td>
+      </tr>
+    <% end %>
+  <%= link_to 'Add Player', new_twin_path %>
+  </table>
+</div>
+
