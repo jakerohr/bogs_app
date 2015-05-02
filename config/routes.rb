@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
-  get 'tags' => 'tags#index'
+  # get 'tags' => 'tags#index'
 
   # get 'tags/new'
 
-  get 'tags/:id' => 'tags#show'
+  # get 'tags/:id' => 'tags#show'
 
-  post 'tags' => 'tags#create'
+  # post 'tags' => 'tags#create'
 
-  delete 'tags/:id' => 'tags#destroy'
+  # delete 'tags/:id' => 'tags#destroy'
 
 
 
-  get 'twins/index'
+  # get 'twins/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'twins#index'
-  resources :tags, :except => [:destroy, :show, :create]
+  resources :tags#, :except => [:destroy, :show, :create]
   resources :twins
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

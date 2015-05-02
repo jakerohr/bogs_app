@@ -13,12 +13,12 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.create(tag_params)
-
-    if @tag.save
-      render 'index'
-    else
-      render 'root_path'
-    end
+    redirect_to tags_path
+    # if @tag.save
+    #   render 'index'
+    # else
+    #   render 'root_path'
+    # end
   end
 
   def destroy
@@ -27,10 +27,10 @@ class TagsController < ApplicationController
     unless @tag.twins.length > 0
       Tag.destroy(params[:id])
     else
-      flash[:info] = "Cannot delete this tag. This tag has #{@tag.twins.length} " + "creature".pluralize(@tag.twins.length)
+      flash[:info] = "Cannot delete this tag. This tag belongs to #{@tag.twins.length} " + "Player".pluralize(@tag.twins.length)
     end
 
-    redirect_to 'index'
+    redirect_to tags_path
   end
   private
     def tag_params

@@ -6,6 +6,20 @@ class TwinsController < ApplicationController
   def show
     @twin = Twin.find(params[:id])
     @tags = @twin.tags
+    @tag = Tag.new
+    # @tags << @tag
+    # @twin.tags.clear
+    # tags = params[:twin][:tag_ids]
+    # tags.each do |tag_id|
+    #  @twin.tags << Tag.find(tag_id) unless tag_id.blank?
+    # end
+    # if @twin.update(twin_params)
+    #   redirect_to @twin
+    # else
+    #   render 'edit'
+    # end
+    # redirect_to twin_path
+
   end
 
   def new
@@ -20,6 +34,7 @@ class TwinsController < ApplicationController
 
   def create
     @twin = Twin.new(twin_params)
+
     tags = params[:twin][:tag_ids]
     tags.each do |tag_id|
      @twin.tags << Tag.find(tag_id) unless tag_id.blank?
@@ -48,4 +63,7 @@ class TwinsController < ApplicationController
     def twin_params
       params.require(:twin).permit(:name, :position, :number, :bio)
     end
+    # def tag_params
+    #   params.require(:tag).permit(:name)
+    # end
 end

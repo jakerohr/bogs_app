@@ -19,5 +19,10 @@
 </ul>
 <% end %>
 
+<%= bootstrap_form_for @tag do |f| %>
+  <%= f.text_field :name, :placeholder => "Enter a new tag" %>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit Player', edit_twin_path(@twin) %> |
 <%= link_to 'Full Roster', twins_path %>
