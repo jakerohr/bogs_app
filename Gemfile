@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "typhoeus"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootstrap_form'
 gem 'rails', '4.2.1'

@@ -4,7 +4,8 @@
 .gray {
   background-color: rgb(231, 231, 231);
   min-height: 1000px;
-  margin-top: 0px;
+  margin-top: 40px;
+  border-radius: 5px;
 }
 h1 {
   color: #CF1141;

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   root 'twins#index'
   resources :tags#, :except => [:destroy, :show, :create]
   resources :twins
+  resources :search
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
