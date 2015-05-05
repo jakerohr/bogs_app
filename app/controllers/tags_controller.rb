@@ -12,8 +12,13 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.create(tag_params)
-    redirect_to tags_path
+    if tag_params[:name] != ""
+      @tag = Tag.create(tag_params)
+      redirect_to tags_path
+    else
+      flash[:danger] = "You must enter a tag name brah!"
+      redirect_to tags_path
+    end
     # if @tag.save
     #   render 'index'
     # else
